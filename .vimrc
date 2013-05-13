@@ -3,6 +3,7 @@ set nocompatible
 set number
 syntax on
 colorscheme ir_black
+set mouse=a
 
 "display tabs and trailing spaces
 set list
@@ -12,6 +13,9 @@ set wrap "dont wrap lines
 set linebreak "wrap lines at convenient points
 
 set autoindent
+set smartindent
+set expandtab
+set shiftwidth=2
 
 "tell the term has 256 colors
 set t_Co=256
@@ -26,3 +30,7 @@ set statusline +=%2*%m%*                "modified flag
 set statusline +=%1*%=%5l%*             "current line
 set statusline +=%2*/%L%*               "total lines
 set statusline +=%1*%4v\ %*             "virtual column number
+
+"CtrlP installation
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_working_path_mode = 0
