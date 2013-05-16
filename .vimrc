@@ -35,16 +35,15 @@ augroup END
 "tell the term has 256 colors
 set t_Co=256
 
+hi StatusLine ctermbg=17 ctermfg=244
 set laststatus=2
 set statusline=
-set statusline +=%1*\ %n\ %*            "buffer number
-set statusline +=%5*%{&ff}%*            "file format
-set statusline +=%3*%y%*                "file type
-set statusline +=%4*\ %<%F%*            "full path
-set statusline +=%2*%m%*                "modified flag
-set statusline +=%1*%=%5l%*             "current line
-set statusline +=%2*/%L%*               "total lines
-set statusline +=%1*%4v\ %*             "virtual column number
+set statusline +=%n            "buffer number
+set statusline +=\ %F          "full path
+set statusline +=%m            "modified flag
+set statusline +=%=%5l         "current line
+set statusline +=/%L           "total lines
+set statusline +=%4v\          "virtual column number
 
 "CtrlP installation
 set runtimepath^=~/.vim/bundle/ctrlp.vim
