@@ -20,6 +20,9 @@ set shiftwidth=2
 "configure viminfo
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
+"use the same yank buffer for all windows
+set clipboard=unnamedplus
+
 "use undo history
 set undofile
 set undodir=~/.vimundo/
