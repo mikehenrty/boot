@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/mhenretty/moz/gaia/test_apps/test-agent/common/vendor'
-let g:netrw_dirhist_2='/Users/mhenretty/moz/gaia/test_apps/test-agent/common/vendor/test-agent'
-let g:netrw_dirhist_3='/Users/mhenretty/moz/gaia/apps/system'
