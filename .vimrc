@@ -46,6 +46,7 @@ augroup END
 set t_Co=256
 
 hi StatusLine ctermbg=17 ctermfg=244
+hi StatusLineNC ctermbg=244 ctermfg=Black
 set laststatus=2
 set statusline=
 set statusline +=%n            "buffer number
