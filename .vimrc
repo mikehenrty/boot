@@ -30,6 +30,10 @@ set clipboard=unnamedplus
 set undofile
 set undodir=~/.vimundo/
 
+"use better tab completion for file names
+set wildmode=longest:full
+set wildmenu
+
 "restore cursor when editing file
 function! ResCur()
   if line("'\"") <= line("$")
