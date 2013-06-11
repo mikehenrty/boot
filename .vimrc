@@ -14,8 +14,9 @@ set linebreak "wrap lines at convenient points
 
 set autoindent
 set smartindent
-set expandtab
+set tabstop=2
 set shiftwidth=2
+set expandtab
 
 "configure viminfo
 set viminfo='10,\"100,:20,%,n~/.viminfo
