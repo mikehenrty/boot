@@ -5,6 +5,9 @@ syntax on
 colorscheme ir_black
 set mouse=a
 
+"add .jsm extension for javascript
+au BufNewFile,BufRead *.jsm set filetype=javascript
+
 "display tabs and trailing spaces
 set list
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
