@@ -67,3 +67,4 @@ set statusline +=%4v\          "virtual column number
 "CtrlP installation
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = 0
+map <C-b> :CtrlPBuffer<CR>
