@@ -15,6 +15,9 @@ set listchars=tab:↪⋅,trail:⋅,nbsp:⋅
 set wrap "dont wrap lines
 set linebreak "wrap lines at convenient points
 
+"disable swap file creation
+set noswapfile
+
 set autoindent
 set smartindent
 set tabstop=2
