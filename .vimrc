@@ -25,7 +25,7 @@ set shiftwidth=2
 set expandtab
 
 "configure viminfo
-set viminfo='10,\"100,:20,%,n~/.viminfo
+set viminfo='10,\"100,:20,n~/.viminfo
 
 "use the same yank buffer for all windows
 set clipboard=unnamedplus
