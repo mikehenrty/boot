@@ -48,6 +48,10 @@ if [ ! -e $SRC_DIR/.git ]; then
 	# link vim configuration files
 	ln -s $SRC_DIR/.vimrc $HOME/.vimrc
 	ln -s $SRC_DIR/.vim $HOME/.vim
+
+	# create vim undo directory
+	mkdir $HOME/.vimundo/
+
 else 
 	echo "updating mikehenrty boot"
 	cd $SRC_DIR && git pull origin master
