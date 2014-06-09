@@ -49,6 +49,11 @@ if [ ! -e $SRC_DIR/.git ]; then
 	ln -s $SRC_DIR/.vimrc $HOME/.vimrc
 	ln -s $SRC_DIR/.vim $HOME/.vim
 
+  # link xmodmap config
+  ln -s $SRC_DIR/.Xmodmap $HOME/.Xmodmap
+  xmodmap ~/.Xmodmap
+
+
 	# create vim undo directory
 	mkdir $HOME/.vimundo/
 
