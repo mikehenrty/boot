@@ -31,7 +31,7 @@ set viminfo='10,\"100,:20,n~/.viminfo
 set clipboard=unnamedplus
 
 "make ! commands use my shell config
-:set shellcmdflag=-ic
+set shellcmdflag=-ic
 
 "use undo history
 set undofile
