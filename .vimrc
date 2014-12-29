@@ -10,7 +10,7 @@ au BufNewFile,BufRead *.jsm set filetype=javascript
 
 "display tabs and trailing spaces
 set list
-set listchars=tab:↪⋅,trail:⋅,nbsp:⋅
+set listchars=tab:⋅\ ,trail:⋅,nbsp:⋅
 
 set wrap "dont wrap lines
 set linebreak "wrap lines at convenient points
