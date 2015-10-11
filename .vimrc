@@ -23,6 +23,17 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set cursorline
+set lazyredraw
+set showmatch
+
+"prettify search
+set incsearch
+set hlsearch
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
 "configure viminfo
 set viminfo='10,\"100,:20,n~/.viminfo
@@ -69,6 +80,7 @@ set statusline +=%4v\          "virtual column number
 
 "CtrlP installation
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = 'node_modules'
 map <C-b> :CtrlPBuffer<CR>
