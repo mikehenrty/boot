@@ -78,6 +78,10 @@ set statusline +=%=%5l         "current line
 set statusline +=/%L           "total lines
 set statusline +=%4v\          "virtual column number
 
+"Use Pathogen to load plugins
+execute pathogen#infect()
+filetype plugin indent on
+
 "CtrlP installation
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
