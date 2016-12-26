@@ -11,22 +11,22 @@ fail() {
 [[ `which git` ]] || fail "Please install git first."
 
 #begin setup
-#echo "                          .---. .---. 
-#echo "                         :     : o   :
-#echo "                     _..-:   o :     :-.._
-#echo "                 .-''  '  `---' `---' "   ``-.    
-#echo "               .'   "   '  "  .    "  . '  "  `.
-#echo "              :   '.---.,,.,...,.,.,.,..---.  ' ;
-#echo "              `. " `.                     .' " .
-#echo "               `.  '`.                   .' ' .'
-#echo "                `.    `-._           _.-' "  .'  .----.
-#echo "                  `. "    '"--...--"'  . ' .'  .'  o   `.
-#echo "                  .'`-._'    " .     " _.-'`. :       o  :
-#echo "                .'      ```--.....--'''    ' `:_ o       :
-#echo "              .'    "     '         "     "   ; `.;";";";'
-#echo "             ;         '       "       '     . ; .' ; ; ;
-#echo "            ;     '         '       '   "    .'      .-'
-#echo "            '  "     "   '      "           "    _.-'
+echo $'              .---. .---. '
+echo $'             :     : o   :'
+echo $'         _..-:   o :     :-.._'
+echo $'     .-\'\'  \'  `---\' `---\' "   ``-.    '
+echo $'   .\'   "   \'  "  .    "  . \'  "  `.'
+echo $'  :   \'.---.,,.,...,.,.,.,..---.  \' ;'
+echo $'  `. " `.                     .\' " .'
+echo $'   `.  \'`.                   .\' \' .\''
+echo $'    `.    `-._           _.-\' "  .\'  .----.'
+echo $'      `. "    \'"--...--"\'  . \' .\'  .\'  o   `.'
+echo $'      .\'`-._\'    " .     " _.-\'`. :       o  :'
+echo $'    .\'      ```--.....--\'\'\'    \' `:_ o       :'
+echo $'  .\'    "     \'         "     "   ; `.;";";";\''
+echo $' ;         \'       "       \'     . ; .\' ; ; ;'
+echo $';     \'         \'       \'   "    .\'      .-\''
+echo $'\'  "     "   \'      "           "    _.-\''
 
 #git setup
 git config --global user.name "Michael Henretty"
@@ -48,11 +48,6 @@ if [ ! -e $SRC_DIR/.git ]; then
 	# link vim configuration files
 	ln -s $SRC_DIR/.vimrc $HOME/.vimrc
 	ln -s $SRC_DIR/.vim $HOME/.vim
-
-  # link xmodmap config
-  ln -s $SRC_DIR/.Xmodmap $HOME/.Xmodmap
-  xmodmap ~/.Xmodmap
-
 
 	# create vim undo directory
 	mkdir $HOME/.vimundo/
