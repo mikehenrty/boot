@@ -1,0 +1,14 @@
+[user]
+	email = michael.henretty@gmail.com
+	name = Michael Henretty
+
+[color]
+	ui = auto
+[color "diff-highlight"]
+	oldHighlight = "red #330000"
+	newHighlight = "green #004400"
+
+[core]
+	editor = vim
+  # Use diff-so-fancy if we have it, fallback to less.
+	pager = command -v diff-so-fancy && diff-so-fancy | less -RfX || less -RfX

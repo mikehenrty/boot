@@ -1,58 +1,41 @@
 #!/bin/bash
 
 SRC_DIR=$HOME/.mikehenrty-boot
+LN_DIR=$SRC_DIR/dotfiles
 
 fail() {
-	echo $1
-	exit 1
+  echo $1
+  exit 1
 }
 
-#git
-[[ `which git` ]] || fail "Please install git first."
+# Make sure we have git before contrinuing.
+[[ `command -v git` ]] || fail "Please install git first."
 
-#begin setup
-echo $'              .---. .---. '
-echo $'             :     : o   :'
-echo $'         _..-:   o :     :-.._'
-echo $'     .-\'\'  \'  `---\' `---\' "   ``-.    '
-echo $'   .\'   "   \'  "  .    "  . \'  "  `.'
-echo $'  :   \'.---.,,.,...,.,.,.,..---.  \' ;'
-echo $'  `. " `.                     .\' " .'
-echo $'   `.  \'`.                   .\' \' .\''
-echo $'    `.    `-._           _.-\' "  .\'  .----.'
-echo $'      `. "    \'"--...--"\'  . \' .\'  .\'  o   `.'
-echo $'      .\'`-._\'    " .     " _.-\'`. :       o  :'
-echo $'    .\'      ```--.....--\'\'\'    \' `:_ o       :'
-echo $'  .\'    "     \'         "     "   ; `.;";";";\''
-echo $' ;         \'       "       \'     . ; .\' ; ; ;'
-echo $';     \'         \'       \'   "    .\'      .-\''
-echo $'\'  "     "   \'      "           "    _.-\''
+# Print my welcome message.
+echo $'              .---. .---. \n             :     : o   :\n         _..-:   o :     :-.._\n     .-\'\'  \'  `---\' `---\' "   ``-.    \n   .\'   "   \'  "  .    "  . \'  "  `.\n  :   \'.---.,,.,...,.,.,.,..---.  \' ;\n  `. " `.                     .\' " .\n   `.  \'`.                   .\' \' .\'\n    `.    `-._           _.-\' "  .\'  .----.\n      `. "    \'"--...--"\'  . \' .\'  .\'  o   `.\n      .\'`-._\'    " .     " _.-\'`. :       o  :\n    .\'      ```--.....--\'\'\'    \' `:_ o       :\n  .\'    "     \'         "     "   ; `.;";";";\'\n ;         \'       "       \'     . ; .\' ; ; ;\n; mikehenrty     \'       \'   "    .\'      .-\'\n\'  "     "   \'      "           "    _.-\''
 
-#git setup
-git config --global user.name "Michael Henretty"
-git config --global user.email "michael.henretty@gmail.com"
-git config --global color.ui auto
-git config --global core.editor vim
+echo $'\n\nSetting up your environement.'
 
-# check if this is initial install or update
+# Check if this is initial install or update.
 if [ ! -e $SRC_DIR/.git ]; then
-	# clone the environment
-	echo "configuring mikehenrty's environment for the first time"
-	git clone https://github.com/mikehenrty/boot $SRC_DIR
-	
-	# backup existing vim configuration
-	echo "backing up current vim config"
-	today=`date +%Y%m%d`
-	for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do [ -e $i ] && mkdir -p $HOME/.vim_backup_$today/ && mv $i $HOME/.vim_backup_$today; done
-
-	# link vim configuration files
-	ln -s $SRC_DIR/.vimrc $HOME/.vimrc
-	ln -s $SRC_DIR/.vim $HOME/.vim
-
-	# create vim undo directory
-	mkdir $HOME/.vimundo/
-
-else 
-	echo "updating mikehenrty boot"
-	cd $SRC_DIR && git pull origin master
+  echo "Configuring for the first time."
+  git clone https://github.com/mikehenrty/boot $SRC_DIR
+else
+  echo "Checking for updates."
+  pushd $SRC_DIR && git pull origin master
+  popd
 fi
+
+echo "Updating dotfiles."
+for entry in `ls -A "$LN_DIR"`
+do
+  file_path=$HOME/$entry
+  # Backup old dotfile if it already exists.
+  [ -e $file_path ] && [ ! -L $file_path ] && mv $file_path $file_path"_backup_"`date +%Y%m%d` && echo "Created backup for "$file_path
+  [ ! -e $file_path ] && ln -s $LN_DIR/$entry $HOME/$entry && echo "Created link for "$file_path
+done
+
+# Create vim undo directory.
+[ ! -e $HOME/.vimundo/ ] && mkdir $HOME/.vimundo/ && echo "Created vim undo folder."
+
+echo "Finished setting up enviroment."
