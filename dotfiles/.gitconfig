@@ -11,4 +11,4 @@
 [core]
 	editor = vim
   # Use diff-so-fancy if we have it, fallback to less.
-	pager = command -v diff-so-fancy && diff-so-fancy | less -RfX || less -RfX
+	pager = `command -v diff-so-fancy` && diff-so-fancy | less -RfX || less -RfX
