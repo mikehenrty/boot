@@ -79,12 +79,13 @@ set statusline +=%4v\          "virtual column number
 execute pathogen#infect()
 filetype plugin indent on
 
-"CtrlP installation
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = 'node_modules'
-map <C-b> :CtrlPBuffer<CR>
+" Add fzf (fuzzy find)
+set rtp+=~/.fzf
+" This is the default extra key bindings
+let g:fzf_action = { 'ctrl-v': 'vsplit' }
+let g:fzf_layout = { 'down': '~40%' }
+map <C-p> :FZF<CR>
+map <C-b> :FZF<CR>
 
 " Comment or uncomment lines from mark a to mark b.
 function! CommentMark(docomment, a, b)
