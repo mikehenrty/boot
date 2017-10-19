@@ -87,6 +87,12 @@ let g:fzf_layout = { 'down': '~40%' }
 map <C-p> :FZF<CR>
 map <C-b> :FZF<CR>
 
+" Configure :Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+map <C-f> :Ack!<Space>
+
 " Comment or uncomment lines from mark a to mark b.
 function! CommentMark(docomment, a, b)
   if !exists('b:comment')
