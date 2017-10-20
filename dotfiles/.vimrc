@@ -1,3 +1,10 @@
+" Use vim-plug.
+call plug#begin('~/.vim/plugged')
+Plug 'leafgarland/typescript-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 set nocompatible
 
 set number
@@ -75,17 +82,13 @@ set statusline +=%=%5l         "current line
 set statusline +=/%L           "total lines
 set statusline +=%4v\          "virtual column number
 
-"Use Pathogen to load plugins
-execute pathogen#infect()
-filetype plugin indent on
-
 " Add fzf (fuzzy find)
 set rtp+=~/.fzf
 " This is the default extra key bindings
 let g:fzf_action = { 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~40%' }
 map <C-p> :FZF<CR>
-map <C-b> :FZF<CR>
+map <C-b> :Buffers<CR>
 
 " Configure :Ack
 if executable('ag')
