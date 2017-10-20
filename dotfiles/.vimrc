@@ -87,8 +87,8 @@ set rtp+=~/.fzf
 " This is the default extra key bindings
 let g:fzf_action = { 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~40%' }
-map <C-p> :FZF<CR>
-map <C-b> :Buffers<CR>
+map <C-p> :Files<CR>
+map ; :Buffers<CR>
 
 " Configure :Ack
 if executable('ag')
