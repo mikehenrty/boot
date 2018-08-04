@@ -12,6 +12,10 @@ syntax on
 colorscheme ir_black
 set mouse=a
 
+"don't use safe writes
+set nobackup
+set nowritebackup
+
 "add .jsm extension for javascript
 au BufNewFile,BufRead *.jsm set filetype=javascript
 
