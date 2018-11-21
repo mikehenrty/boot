@@ -54,3 +54,10 @@ clone_or_pull "https://github.com/junegunn/fzf.git" "$SRC_DIR/.fzf"
 $SRC_DIR/.fzf/install
 
 echo "Finished setting up enviroment."
+
+# Expose any tools as aliases
+if [ -f ~/.zshrc ]; then
+  echo "export PATH=\$PATH:$SRC_DIR/tools" >> ~/.zshrc
+elif [ -f ~/.bashrc ]; then
+  echo "export PATH=\$PATH:$SRC_DIR/tools" >> ~/.bashrc
+fi
