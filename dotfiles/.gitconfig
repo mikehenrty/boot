@@ -10,4 +10,4 @@
 
 [core]
   editor = vim
-  pager = diff-so-fancy | less -RFX
+  pager = diff-so-fancy || less -RFX
