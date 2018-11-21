@@ -51,7 +51,7 @@ done
 
 # Install fuzzy finder
 clone_or_pull "https://github.com/junegunn/fzf.git" "$SRC_DIR/.fzf"
-$SRC_DIR/.fzf/install
+$SRC_DIR/.fzf/install --all
 
 echo "Finished setting up enviroment."
 
