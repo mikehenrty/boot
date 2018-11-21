@@ -1,8 +1,7 @@
 " Use vim-plug.
 call plug#begin('~/.vim/plugged')
 Plug 'leafgarland/typescript-vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '.fzf', 'do': './install --all' }
 call plug#end()
 
 set nocompatible
@@ -91,8 +90,8 @@ set rtp+=~/.fzf
 " This is the default extra key bindings
 let g:fzf_action = { 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~40%' }
-map <C-p> :Files<CR>
-map ; :Buffers<CR>
+map <C-p> :FZF<CR>
+map ; :buffers<CR>
 
 " Configure :Ack
 if executable('ag')

@@ -8,6 +8,17 @@ fail() {
   exit 1
 }
 
+# Check if this is initial install or update.
+clone_or_pull() {
+  if [ ! -e $2/.git ]; then
+    echo "Checking out $1."
+    git clone $1 $2
+  else
+    echo "Checking $1 for updates."
+    pushd $2 && git pull origin master && popd
+  fi
+}
+
 # Make sure we have git before contrinuing.
 [[ `command -v git` ]] || fail "Please install git first."
 
@@ -37,5 +48,9 @@ done
 
 # Create vim undo directory.
 [ ! -e $HOME/.vimundo/ ] && mkdir $HOME/.vimundo/ && echo "Created vim undo folder."
+
+# Install fuzzy finder
+clone_or_pull "https://github.com/junegunn/fzf.git" "$SRC_DIR/.fzf"
+$SRC_DIR/.fzf/install
 
 echo "Finished setting up enviroment."
