@@ -3,20 +3,20 @@
   name = Michael Henretty
 
 [color]
-	ui = true
+  ui = true
 [color "diff-highlight"]
-	oldHighlight = red bold 52
-	newHighlight = green bold 22
-	oldNormal = red bold
-	newNormal = green bold
+  oldHighlight = red bold 52
+  newHighlight = green bold 22
+  oldNormal = red bold
+  newNormal = green bold
 
 [core]
   editor = vim
   pager = diff-so-fancy || less -RFX
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
