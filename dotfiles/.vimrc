@@ -3,6 +3,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'leafgarland/typescript-vim'
 Plug '~/.fzf/bin/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 set nocompatible
