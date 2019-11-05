@@ -23,6 +23,10 @@ set nowritebackup
 "add .jsm extension for javascript
 au BufNewFile,BufRead *.jsm set filetype=javascript
 
+" set filetypes as typescript.tsx
+au BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+au BufNewFile,BufRead *.ts set filetype=typescript
+
 "display tabs and trailing spaces
 set list
 set listchars=tab:⋅\ ,trail:⋅,nbsp:⋅
