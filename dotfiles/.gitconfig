@@ -2,6 +2,9 @@
   email = michael.henretty@gmail.com
   name = Michael Henretty
 
+[alias]
+  acm = "!f(){ git add -u && git commit -m \"$1\"; };f"
+
 [color]
   ui = true
 [color "diff"]
