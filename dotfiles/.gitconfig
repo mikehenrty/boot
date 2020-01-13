@@ -25,7 +25,7 @@
   pager = (diff-so-fancy | less --tabs=4 -RFX) || less -RFX
 
 [url "git@git.coursehero.com:"]
-	insteadOf = https://git.coursehero.com/
+  insteadOf = https://git.coursehero.com/
 [gitreview]
-	remote = origin
-	username = mikehenrty
+  remote = origin
+  username = mikehenrty
