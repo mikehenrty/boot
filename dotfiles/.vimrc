@@ -103,6 +103,9 @@ let g:fzf_layout = { 'down': '~40%' }
 map <C-p> :Files<CR>
 map ; :Buffers<CR>
 
+" Python configure maximum line checking
+let g:pymode_options_max_line_length = 88
+
 " Configure :Ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
