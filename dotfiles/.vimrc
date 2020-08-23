@@ -1,7 +1,7 @@
 " Use vim-plug.
 call plug#begin('~/.vim/plugged')
 Plug 'leafgarland/typescript-vim'
-Plug '~/.fzf/bin/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -96,7 +96,7 @@ set statusline +=/%L           "total lines
 set statusline +=%4v\          "virtual column number
 
 " Add fzf (fuzzy find)
-set rtp+=~/.fzf
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " This is the default extra key bindings
 let g:fzf_action = { 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~40%' }
