@@ -29,3 +29,7 @@
 [gitreview]
   remote = origin
   username = mikehenrty
+[pull]
+	ff = only
+[push]
+	default = current
